@@ -1,0 +1,148 @@
+
+<h1> welcome to softpath system</h1>
+<app-tasks></app-tasks>
+<h4>welcome to optevus Trainee</h4>
+<p>OPTEVUS: Optevus is an AI/ML-enabled intelligent hiring platformwhich enhances the hiring experience and helps the people operations value chain by providing video screening and interviews, remote proctoring, automated assessments, NLP-based parsing and search, algorithmic resume ranking, as well as augmented intelligent recommendations. All of these inputs help to take composable business choices and transform decision making to avoid manual errors and intervention, while improving productivity and reducing recruitment costs.</p>
+    
+    
+<p>Softpath is focusing on enabling products with next-generation technologies in the world of Artificial Intelligence (AI) and combining its inherent strengths in staffing services and consulting solutions.</p>
+
+<h1>learning about directives</h1>
+<h3>structural directives:</h3>
+<h4>ngIf example</h4>
+<div *ngIf="showMsg;else showElseMsg">show message</div>
+<ng-template #showElseMsg>show else message</ng-template>
+
+<h4>ngSwitch example</h4>
+<div [ngSwitch]="switchValue">
+    <div *ngSwitchCase="1">Name : thiru</div>
+    <div *ngSwitchCase="2">Designation : Msc</div>
+    <div *ngSwitchCase="3">Occupation : Optevus Trainee</div>
+    <div *ngSwitchCase="4">Goal: Full-stack developer</div>
+    <div *ngSwitchDefault>this is a default value</div>
+    </div>
+    
+    <h4>ngFor examples</h4>
+
+    <table class="table">
+          <tr>
+
+            <th>User Id</th>
+            <th> First Name</th>
+            <th> Index </th>
+            <th> First </th>
+            <th> Last </th>
+            <th> Even </th>
+            <th> Odd </th>
+
+        </tr>
+
+        <tr *ngFor="let user of users; index as i, first as f, last as l, even as e, odd as o;">
+            <td>{{ user.userId }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ i }}</td>
+            <td>{{ f }}</td>
+            <td>{{ l }}</td>
+            <td>{{ e }}</td>
+            <td>{{ o }}</td>
+        
+        </tr>
+    </table>
+
+     <h4>ngClass topic</h4>
+    <div [ngClass]="[clsName, clsName2]">
+      Learning ngClass
+    </div>
+
+    <div [ngClass]="{'one':true, 'two' :false}">
+        Learning ngClass with expressions
+    </div>
+    <h1>learning about Data Binding</h1>
+
+    <h3>One-way Data Binding:</h3>
+    <h4>1.Interpolation</h4>
+    <div>{{ subTitle }}</div>
+    <div>{{ empNum }}</div>
+
+    <table class="table">
+        <tr>
+          <th>empId</th>
+          <th>empName</th>
+          </tr>
+          <tr *ngFor="let emp of emps;"> 
+            <td>{{ emp.empId }}</td>
+            <td>{{ emp.empName }} </td>
+        
+          </tr>
+
+          <h4>2.property Binding</h4>
+          <div [ngStyle]="{color:colorVal}">This is the example of property Binding</div>
+          <p [innerHTML]='subTitle'></p>
+          <input [placeholder]="placeholderVal">
+          <a [href] ="hrefVal" [attr.updateLink]='updateLink' [attr.data-link]='updateLink'>Google</a>
+
+          <h4>3.Attribute Binding</h4>
+          <table class="table">
+            <tr>
+              <td>ContactId</td>
+              <td>ContactName</td>
+              <td>Contactemail</td>
+            </tr>
+        
+              <tr>
+                <td>ContactId</td>
+                <td>Contactemail</td>
+              </tr>
+            <tr>
+              <td [attr.colspan]="colVal">contact</td>
+              <td>Contactemail</td> 
+            </tr>
+          </table>
+
+          <h4>4.Event Binding</h4>
+          <button (click)="showAlert();">Click Me</button>
+<p>
+  <input (focus)="consoleLog();"/>
+</p>
+<h3>two-way DataBinding:</h3>
+
+<input [(ngModel)]="cityname"/>
+
+      <p>{{ cityname }}</p>
+      <button (click)="readcityname()">Read cityname</button>
+
+
+      <h1>learning about pipes</h1>
+      <h4>1.Built-in pipes</h4>
+      <h4>2.Parameterized pipe</h4>
+      <div>
+        {{ team.firstName | lowercase }}.{{ team.lastName | uppercase }}
+      </div>
+     <div>
+      {{ team.DOB | date:'MMM dd yyyy' }}
+     </div>  
+     <div>
+      {{ team.salary | currency:'USD':'USD':'3.0-3' }}
+     </div> 
+    <code>
+      {{ team | json }}
+    </code>
+    <h4>3.chaining pipes</h4>
+    <div>
+      {{ team.DOB | date:'MMMM' | uppercase }}
+    </div>
+    <h4>4.Custom pipe</h4>
+    <ul>
+      <li *ngFor="let employer of employers">
+    <div [innerHTML]="employer.city | highlightpipe:employer.city"></div>
+    </li>
+    </ul>
+
+      
+
+        
+    
+
+ <router-outlet></router-outlet>  
+
+
